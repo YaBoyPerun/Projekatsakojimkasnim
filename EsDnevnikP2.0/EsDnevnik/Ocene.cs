@@ -28,7 +28,7 @@ namespace EsDnevnik
             {
                 try
                 {
-                    if (MessageBox.Show("Da li ste sigurni da zelite da obrisete ove podatake?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Razmislite pre nego li obrisete podatke-", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         int indeks = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
 
@@ -47,7 +47,7 @@ namespace EsDnevnik
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ne mozete da obrisete ove podatake, druge tabele zahtevaju ove podatake! - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Veoma vazni podaci za druge tabele" + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -55,7 +55,7 @@ namespace EsDnevnik
             {
                 try
                 {
-                    if (MessageBox.Show("Da li ste sigurni da zelite da izmenite ove podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Razmotrite promene", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         menjanja = new SqlCommand();
 
@@ -108,7 +108,7 @@ namespace EsDnevnik
             {
                 try
                 {
-                    if (MessageBox.Show("Da li ste sigurni da zelite da dodate ove podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Da li zelite da dodate podatke", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         menjanja = new SqlCommand();
 
@@ -150,7 +150,7 @@ namespace EsDnevnik
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ne mozete da dodate vec postojece podatke! - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Podatak vec postoji- " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Osvezi();
                 }
             }

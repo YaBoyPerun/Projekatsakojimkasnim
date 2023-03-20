@@ -88,7 +88,7 @@ namespace EsDnevnik
             {
                 try
                 {
-                    if (MessageBox.Show("Da li ste sigurni da zelite da obrisete ove podatake?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Da li ste sigurni", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         int indeks;
                         if (tabela == "Skolska_godina")
@@ -114,7 +114,7 @@ namespace EsDnevnik
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ne mozete da obrisete ove podatake, druge tabele zahtevaju ove podatake! - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Veoma vazni podaci za druge tabele " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Osvezi(tabela);
                 }
             }
@@ -123,7 +123,7 @@ namespace EsDnevnik
             {
                 try
                 {
-                    if (MessageBox.Show("Da li ste sigurni da zelite da izmenite ove podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Razmotrite promene", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         menjanja = new SqlCommand();
 
@@ -181,7 +181,7 @@ namespace EsDnevnik
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Podatak vec postoji u tabeli - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vec postojeci podatak-" + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Osvezi(tabela);
                 }
             }
@@ -190,7 +190,7 @@ namespace EsDnevnik
             {
                 try
                 {
-                    if (MessageBox.Show("Da li ste sigurni da zelite da dodate ove podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Da li zelite da dodate podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         menjanja = new SqlCommand();
 
@@ -244,7 +244,7 @@ namespace EsDnevnik
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ne mozete da dodate vec postojece podatke! - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Podatak vec postoji - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Osvezi(tabela);
                 }
             }

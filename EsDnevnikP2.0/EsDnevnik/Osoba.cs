@@ -116,20 +116,20 @@ namespace EsDnevnik
                         menjanja.Connection = con;
                         menjanja.ExecuteNonQuery();
                         con.Close();
-                        label9.Text = "Uspesno ste dodali podatak!";
+                        label9.Text = "Uneli ste podatak";
                         label9.Visible = true;
                         osoba = new DataTable();
                         osoba = Konekcija.Unos("SELECT * FROM Osoba");
                         TextLoad();
                     }
-                    else label9.Text = "Uloga mora biti ili 1 ili 2!"; label9.Visible = true;
+                    else label9.Text = "Ili 1 ili 2"; label9.Visible = true;
                 }
-                else label9.Text = "JMBG mora imati 13 cifara!"; label9.Visible = true;
+                else label9.Text = "13 cifara, ni jedna manje ni vise"; label9.Visible = true;
                 
             }
             catch
             {
-                label9.Text = "Niste uneli odgovarajuce podatke podatke!";
+                label9.Text = "Pogresni podaci";
                 label9.Visible = true;
             }
         }
@@ -159,16 +159,16 @@ namespace EsDnevnik
                         osoba = new DataTable();
                         osoba = Konekcija.Unos("SELECT * FROM Osoba");
                         TextLoad();
-                        label9.Text = "Uspesno ste izmenili podatak!";
+                        label9.Text = "Izmene primljene";
                         label9.Visible = true;
                     }
-                    else label9.Text = "Uloga mora biti ili 1 ili 2!"; label9.Visible = true;
+                    else label9.Text = "Ili 1 ili 2"; label9.Visible = true;
                 }
-                else label9.Text = "JMBG mora imati 13 cifara!"; label9.Visible = true;
+                else label9.Text = "13 cifara ni jedan vise ni manje"; label9.Visible = true;
             }
             catch
             {
-                label7.Text = "Niste dobro uneli podatke!";
+                label7.Text = "Pogresno uneti podaci";
                 label7.Visible = true;
             }
         }
@@ -201,7 +201,7 @@ namespace EsDnevnik
                 resetovanje_id.ExecuteNonQuery();
                 con.Close();
 
-                label9.Text = "Uspesno ste obrisali podatak!";
+                label9.Text = "Podatak obrisan";
                 label9.Visible = true;
                 osoba = new DataTable();
                 osoba = Konekcija.Unos("SELECT * FROM Osoba");
@@ -210,7 +210,7 @@ namespace EsDnevnik
             }
             catch
             {
-                label9.Text = "Ne mozete da obrisete dati podatak!";
+                label9.Text = "Ne smete da brisete podatak";
                 label9.Visible = true;
             }
         }

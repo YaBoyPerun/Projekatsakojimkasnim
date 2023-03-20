@@ -150,12 +150,12 @@ namespace EsDnevnik
                 odeljenja3 = Konekcija.Unos("SELECT ime + ' ' + prezime AS id_razredni FROM Osoba JOIN Odeljenje ON Osoba.id = Odeljenje.razredni_id");
                 odeljenja4 = Konekcija.Unos("SELECT naziv AS godina_id FROM Skolska_godina JOIN Odeljenje ON Odeljenje.godina_id = Skolska_godina.id");
                 TextLoad();
-                label7.Text = "Uspesno ste izmenili podatak!";
+                label7.Text = "Izmena gotova";
                 label7.Visible = true;
             }
             catch
             {
-                label7.Text = "Niste dobro uneli podatke!";
+                label7.Text = "Pogresno unet podatak";
                 label7.Visible = true;
             }
         }
@@ -179,7 +179,7 @@ namespace EsDnevnik
                 menjanja.ExecuteNonQuery();
                 resetovanje_id.ExecuteNonQuery();
                 con.Close();
-                label7.Text = "Uspesno ste obrisali podatak!";
+                label7.Text = "Podatak obrisan";
                 label7.Visible = true;
                 odeljenja = new DataTable();
                 odeljenja2 = new DataTable();
@@ -193,7 +193,7 @@ namespace EsDnevnik
             }
             catch
             {
-                label7.Text = "Ne mozete da obrisete dati podatak!";
+                label7.Text = "Ne smete brisati ovaj podatak";
                 label7.Visible = true;
             }
         }
@@ -220,7 +220,7 @@ namespace EsDnevnik
                 menjanja.Connection = con;
                 menjanja.ExecuteNonQuery();
                 con.Close();
-                label7.Text = "Uspesno ste dodali podatak!";
+                label7.Text = "Podatak unet";
                 label7.Visible = true;
                 odeljenja = new DataTable();
                 odeljenja2 = new DataTable();
@@ -233,7 +233,7 @@ namespace EsDnevnik
             }
             catch
             {
-                label7.Text = "Niste uneli odgovarajuce podatke podatke!";
+                label7.Text = "Pogresni podaci";
                 label7.Visible = true;
             }
         }
